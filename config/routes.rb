@@ -12,4 +12,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  post 'import_products_to_solr', to: 'pages#import_products_to_solr'
+  get 'search', to: 'search#index'
+  get 'search/results', to: 'search#results'
+  get 'solr_import', to: 'solr_import#index', as: :solr_import_index
+  post 'solr_import/import_productlines_text_description', to: 'solr_import#import_productlines_text_description', as: :import_productlines_text_description
 end
